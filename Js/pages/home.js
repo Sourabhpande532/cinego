@@ -29,7 +29,17 @@ const RenderMovieTable = ( data ) => {
     </table>`
 }
 
+const ErrorBanner = ( err ) => {
+    return `<hgroup>
+    <h1>Error,Occured${ err }</h1>
+    </hgroup>`
+}
+
 export default async function home() {
-    const { error, data } = await apiGetCinema()
+    const { error, data } = await apiGetCinema();
+    if ( error ) {
+        document.getElementById( "app" ).innerHTML = ErrorBanner( error )
+
+    }
     document.getElementById( "app" ).innerHTML = RenderMovieTable( data )
 }
