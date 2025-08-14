@@ -13,7 +13,9 @@ const displayData = ( { id, title, director, genre } ) => {
 const RenderMovieTable = ( data ) => {
     const movieTable = data.map( displayData );
     const movieRowHtml = movieTable.join( "" );
-    return `<table>
+    return `
+    <h1>Movie Watchlist</h1><hr/>
+    <table>
         <thead>
             <tr>
                 <th>ID</th>
@@ -39,7 +41,7 @@ export default async function home() {
     const { error, data } = await apiGetCinema();
     if ( error ) {
         document.getElementById( "app" ).innerHTML = ErrorBanner( error )
-
+        return;
     }
     document.getElementById( "app" ).innerHTML = RenderMovieTable( data )
 }
