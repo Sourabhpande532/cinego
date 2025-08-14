@@ -7,12 +7,14 @@ const getHash = () => {
 }
 
 const deleteData = () => {
-    return `<h1>Data deleted </h1>`
+    return `<h1>Data deleted successfully </h1>
+    <p><a href="/index.html">Go Home<a></p>
+    `
 }
 
 const removeHandler = async () => {
     const id = getHash();
-    const { error } = await apiDeleteMovie( id );
+    const { data } = await apiDeleteMovie( id );
     // if ( error ) {
     // }
     document.getElementById( "app" ).innerHTML = deleteData();
@@ -40,9 +42,20 @@ const cinegoDetails = ( data ) => {
         </footer>
     </article>`
 }
+const ErrorBanner = ( error ) => {
+    return `<hgroup>
+    <h2>Error Occured</h2>
+    <p>${ error.message }</p>
+    </hgroup>`;
+}
+
 export default async function render() {
     const id = getHash();
     const { error, data } = await apiGetMovieDetails( id );
-    document.getElementById( "app" ).innerHTML = cinegoDetails( data );
+    if ( !error ) {
+        document.getElementById( "app" ).innerHTML = cinegoDetails( data );
+    } else {
+        document.getElementById( "app" ).innerHTML = ErrorBanner( error );
+    }
     removeClickHandler();
 }
