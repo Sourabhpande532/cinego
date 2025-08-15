@@ -55,7 +55,7 @@ This app is built to:
 ## 🛠️ Installation
 
 ```bash
-git clone https://github.com/Sourabhpande532/kinyu-api-dashboard.git
+git clone https://github.com/Sourabhpande532/cinego_moviewatchlist.git
 
 ```
 
