@@ -27,6 +27,8 @@ const removeClickHandler = () => {
 }
 
 const cinegoDetails = ( data ) => {
+    const date = data.dateWatched;
+    const properDate = date.split("T")[0]
     return `<article>
         <header>
             <h2>${ data.title }</h2>
@@ -34,7 +36,7 @@ const cinegoDetails = ( data ) => {
         <body>
             <p><strong>Director:</strong> ${ data.director }</p>
             <p><strong>Genre:</strong> ${ data.genre }</p>
-            <p><strong>Date Watched:</strong> ${ data.dateWatched }</p>
+            <p><strong>Date Watched:</strong> ${ properDate }</p>
             <p><strong>Review:</strong> ${ data.review }</p>
         </body>
         <footer>
