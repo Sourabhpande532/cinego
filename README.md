@@ -18,15 +18,20 @@ This app is built to:
 
 ---
 
+
+ ***
 ## 🚀 Tech Stack
 
-- HTML & CSS (Pico.css)
-- Atom Router
-- MockBee (mock REST API)
+> HTML
 
+> PICO CSS  
+
+> MOCKBEE SERVER
 ---
 
-## [GO LIVE](#) <!-- add your deployed link here -->
+***
+
+## [GO LIVE](https://codesandbox.io/p/sandbox/ng6-assignment-1-2djkmx)
 
 ![Home](./assets/home.page.png)
 ---
@@ -51,3 +56,19 @@ This app is built to:
 
 ```bash
 git clone https://github.com/Sourabhpande532/kinyu-api-dashboard.git
+
+```
+
+***
+
+## Skills Gained in the Project
+
+- Building CRUD UIs with a mock REST backend.
+
+- Setting up custom routes & dynamic params with Atom Router.
+
+- Managing form state and optimistic UI updates.
+
+- Handling theme state and CSS theming.
+
+- Working with fetch/async patterns & error handling.
